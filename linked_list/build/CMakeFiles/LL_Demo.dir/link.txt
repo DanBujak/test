@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/LL_Demo.dir/src/linkedlist.c.o CMakeFiles/LL_Demo.dir/src/ll_demo.c.o CMakeFiles/LL_Demo.dir/src/queue.c.o  -o LL_Demo 

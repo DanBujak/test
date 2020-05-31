@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/QS_Demo.dir/src/main.c.o  -o QS_Demo 

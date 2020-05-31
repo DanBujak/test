@@ -1,0 +1,3 @@
+// the configured options and settings for Tutorial
+#define LinkedList_VERSION_MAJOR @LinkedList_VERSION_MAJOR@
+#define LinkedList_VERSION_MINOR @LinkedList_VERSION_MINOR@

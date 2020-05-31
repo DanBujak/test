@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/bujak/Documents/interview_prep/quicksort/src/main.c
+stdio.h
+-
+stdint.h
+-
+stdlib.h
+-
+time.h
+-
+qs_config.h
+/mnt/c/Users/bujak/Documents/interview_prep/quicksort/src/qs_config.h
+
+qs_config.h
+

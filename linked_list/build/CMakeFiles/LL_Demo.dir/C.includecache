@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/bujak/Documents/interview_prep/linked_list/src/linkedlist.c
+stdio.h
+-
+stdint.h
+-
+stdlib.h
+-
+string.h
+-
+errno.h
+-
+linkedlist.h
+/mnt/c/Users/bujak/Documents/interview_prep/linked_list/src/linkedlist.h
+
+/mnt/c/Users/bujak/Documents/interview_prep/linked_list/src/linkedlist.h
+
+/mnt/c/Users/bujak/Documents/interview_prep/linked_list/src/ll_demo.c
+stdio.h
+-
+stdint.h
+-
+stdlib.h
+-
+errno.h
+-
+time.h
+-
+ll_config.h
+/mnt/c/Users/bujak/Documents/interview_prep/linked_list/src/ll_config.h
+linkedlist.h
+/mnt/c/Users/bujak/Documents/interview_prep/linked_list/src/linkedlist.h
+
+/mnt/c/Users/bujak/Documents/interview_prep/linked_list/src/queue.c
+
+ll_config.h
+

@@ -1,0 +1,3 @@
+/mnt/c/Users/bujak/Documents/interview_prep/quicksort/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/bujak/Documents/interview_prep/quicksort/build/CMakeFiles/QS_Demo.dir
+/mnt/c/Users/bujak/Documents/interview_prep/quicksort/build/CMakeFiles/edit_cache.dir
