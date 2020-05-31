@@ -7,6 +7,9 @@
 
 #define ARR_N 20
 
+/*
+ * Function to print array 
+ */
 void print_array ( int * pArray, int len )
 {
   printf("Array Contents:\r\n\t");
@@ -23,59 +26,83 @@ void print_array ( int * pArray, int len )
   printf("\r\n");
 }
 
+
+/*
+ * Function to swap two elements of an array 
+ */
 void swap_array ( int * a, int idxL, int idxR )
 {
-  printf("Swapping %d & %d\r\n", idxL, idxR );
   int tempVal = a[idxL];
   a[idxL] = a[idxR];
   a[idxR] = tempVal;
-  print_array(a, ARR_N);
 }
 
-void parition_array ( int * a, int len )
+
+/*
+ * Partition function
+ */
+int parition_array ( int * a, int idxL, int idxR )
 {
-}
-
-void quicksort_array ( int * a, int lenArray )
-{
-  int pivot;
-
-  int idxPivot = lenArray -1;
-  int idxLeft  = 0;
-  int idxRight = lenArray - 2;
-
+  int pivot = a[idxR];
   
-  //for ( int i = 0; i < lenArray; i++ )
+  int low = idxL;
+  int high = idxR - 1;
 
-  pivot = a[idxPivot];
-  printf("Pivot = %d\r\n", pivot);
-  while ( idxLeft < idxRight )
+  while ( low <= high )
   {
-    printf("Left(%d) = %d, Right(%d) = %d, Pivot(%d) = %d\r\n", idxLeft, a[idxLeft], idxRight, a[idxRight], idxPivot, a[idxPivot]);
-    /* Swap condition */
-    if ( ( a[idxLeft] > pivot ) && ( a[idxRight] < pivot ) )
+    while ( a[low] < pivot ) { low++; }
+    while ( a[high] > pivot ) { high--; }
+
+    /* Values at index L & R should be swapped */
+    if ( low <= high )
     {
-      swap_array(a, idxLeft, idxRight);
-      idxLeft++;
-      idxRight--;
-    }
-    
-    /* No swap possible, walk indeces */
-    else
-    {
-      if ( a[idxLeft] < pivot )
-      {
-        idxLeft++;
-      }
-  
-      if ( a[idxRight] > pivot )
-      {
-        idxRight--;
-      }
+      printf("Swap: [%d]<->[%d]\r\n", low, high);
+      swap_array( a, low, high );
+      low++;
+      high--;
     }
   }
-  printf("Swap Pivot and idxLeft\r\n");
-  swap_array(a, idxLeft, idxPivot);
+
+  /* Swap pivot with Left to final position */
+  printf("Swap: [%d]<->[%d]\r\n", low, idxR);
+  swap_array(a, low, idxR );
+  return low;
+}
+
+/*
+ * Recursive qsort function
+ */
+void quicksort_rec ( int * a, int idxL, int idxR )
+{
+  /* Sort complete */
+  if (idxL >= idxR )
+  {
+    return;
+  }
+
+  printf("\r\nQuicksort (%d, %d)\r\n", idxL, idxR);
+  int partition = parition_array( a, idxL, idxR );
+  printf("Partition Index = %d\r\n", partition);
+  quicksort (a, idxL, partition - 1 );
+  quicksort (a, partition + 1, idxR );
+}
+
+
+
+/*
+ * Iterative qsort function
+ */
+void quicksort_iterative ( int * a, int idxL, int idxR )
+{
+
+}
+
+
+/*
+ * Compare function for qsort
+ */
+int cmpfunc (const void * a, const void * b) {
+   return ( *(int*)a - *(int*)b );
 }
 
 
@@ -86,17 +113,21 @@ int main ( void )
 
   int array[ARR_N] = { 90, 30, 53, 27, 97, 15, 81, 27, 78, 81, 41, 54, 69, 24, 95, 78, 61, 52, 88, 70 };
 
+  //qsort((void*)array, ARR_N, sizeof(int), cmpfunc);
+  //print_array(array, ARR_N);
+  
+
   srand(time(NULL));
 
   printf("\r\n1. Generate an array\r\n");
   for ( int i = 0; i < ARR_N; i++ )
   {
-    //array[i] = rand() % 100;   
+    array[i] = rand() % 100;   
   }
   print_array(array, ARR_N);
 
   printf("\r\n2. Quicksort Array (n=%d)\r\n", ARR_N);
-  quicksort_array(array, ARR_N);
+  quicksort(array, 0, ARR_N - 1);
 
   printf("Result = \r\n");
   print_array(array, ARR_N);

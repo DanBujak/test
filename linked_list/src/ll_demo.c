@@ -113,8 +113,8 @@ int main ( void )
   LL_Print(my_LL);
 
   printf("\r\n9. Sort the list\r\n");
-  
-
+  LL_BubbleSort(&my_LL);
+  LL_Print(my_LL);
   
   printf("\r\nX. Destroy List\r\n");
   int cnt = LL_Destroy(my_LL);
