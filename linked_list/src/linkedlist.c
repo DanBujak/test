@@ -299,6 +299,7 @@ int LL_Reverse ( struct Node ** head_ref )
   return 0;
 }
 
+<<<<<<< HEAD
 int LL_Swap_Next_Two ( struct Node * refNode )
 {
   struct Node * aNode = refNode->next;
@@ -346,7 +347,39 @@ int LL_BubbleSort ( struct Node ** head_ref )
 
     last = walk;
   } while (swapped );
-  
+}  
+
+int LL_Bubble ( struct Node * head_ref )
+{
+  if ( head_ref == NULL ) 
+  {
+    return 0; 
+  }
+  struct Node * i = head_ref;
+  struct Node * j = i->next;
+  while ( i->next != NULL )
+  {
+    while ( 1 ) 
+    {
+      if ( i->data.x > j->data.x )
+      {
+        int buffer = i->data.x;
+        i->data.x = j->data.x;
+        j->data.x = buffer;
+      }
+      if (j->next != NULL)
+      {
+        j = j->next;
+      }
+      else 
+      {
+        break;
+      }
+    }
+    i = i->next;
+    j = i->next;
+  }
+  return 0;
 }
 
 //  Head                     Tail
